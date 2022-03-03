@@ -16,7 +16,7 @@ namespace GradeBook.GradeBooks
         {
             if (Students.Count < 5)
             {
-                throw new InvalidOperationException("Not enough students (<5)");
+                throw new InvalidOperationException("Not enough students (less than 5)");
             }
 
             int oneFifth = (int)Math.Ceiling(Students.Count * 0.2);
@@ -35,6 +35,14 @@ namespace GradeBook.GradeBooks
                 return 'D';
 
             return 'F';
+        }
+
+        public override void CalculateStatistics()
+        {
+            if(Students.Count<5)
+                Console.WriteLine("Ranked grading requires at least 5 students");
+            else
+                base.CalculateStatistics();
         }
     }
 }
