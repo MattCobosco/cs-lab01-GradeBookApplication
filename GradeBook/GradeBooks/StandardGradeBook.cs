@@ -1,10 +1,11 @@
-﻿namespace GradeBook.GradeBooks
+﻿using GradeBook.Enums;
+namespace GradeBook.GradeBooks
 {
     class StandardGradeBook : BaseGradeBook
     {
         public StandardGradeBook(string name) : base(name)
         {
-            Type = Enums.GradeBookType.Standard;
+            Type = GradeBookType.Standard;
         }
     }
 }
